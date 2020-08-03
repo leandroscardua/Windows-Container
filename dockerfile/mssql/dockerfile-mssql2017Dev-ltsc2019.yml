@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 LABEL maintainer "Leandro Scardua"
 
-# Download Links MSSQL 2017 (14.0.1000.169):
+# Download Links MSSQL 2017 Dev Edition (14.0.1000.169):
 ENV exe "https://go.microsoft.com/fwlink/?linkid=840945"
 ENV box "https://go.microsoft.com/fwlink/?linkid=840944"
 
