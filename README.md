@@ -1,2 +1,5 @@
 # Windows-Container
-Repositorio com templates de Windows Container / Repository with Windows Container Templates
+Repositorio com Windows Container templates / Repository with Windows Container Templates
+
+- Compose: 
+- Dockerfile:
