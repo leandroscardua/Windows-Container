@@ -1,0 +1,21 @@
+version: '3.8'
+services: 
+    ms-sql-server:
+        image: local/mssql2017dev-windows-ltsc2019
+        environment: 
+            ACCEPT_EULA: "Y"
+            sa_password: "PassW0rd+42020"
+        ports: 
+          -  "1433:1433"
+    color-api:
+        build: .
+        environment: 
+            DBServer: "ms-sql-server"
+            DBPort: "1433"
+            DBUser: "sa"
+            DBPassword: "PassW0rd+42020"
+            Database: "Colors"
+        ports: 
+           - "8080:80"
+        depends_on:
+           - ms-sql-server
