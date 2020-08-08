@@ -3,15 +3,16 @@ FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 LABEL maintainer "Leandro Scardua"
 
-# configurando o dockerfile para rodar os comandos usando powershell com paramentros abaixo.
+# configurando o dockerfile para rodar os comandos usando powershell com paramentros abaixo. / Run powershell with special configuration
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
-# Instalar o IIS e baixar o Service Monitor
+# Instalar o IIS e baixar a ultima versao do Service Monitor ; Install IIS and download the latest version of Service Monitor
 RUN Add-WindowsFeature Web-Server ; \
+    $dl = ($body1 = (Invoke-WebRequest -UseBasicParsing -Uri "https://api.github.com/repos/microsoft/IIS.ServiceMonitor/releases/latest" | ConvertFrom-json)[0].body -split '### Download URL') ; \
+    Invoke-WebRequest -Uri $dl.GetValue(1) -UseBasicParsing -OutFile "C:\ServiceMonitor.exe"
 
-# Abrir somente a porta 80 para acesso externo   
+# Abrir somente a porta 80 para acesso externo ; expose port 80 to external access 
 EXPOSE 80
 
-# Usando service monitor para verificar a saude do container
+# Usando service monitor para verificar a saude do container ; Use the service monitor to verify the container`s healthy
 ENTRYPOINT ["C:\\ServiceMonitor.exe", "w3svc"]
-
