@@ -1,0 +1,16 @@
+# Windows Server Core 2019 
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
+
+LABEL maintainer "Leandro Scardua"
+
+SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+
+# Instalar o IIS e baixar o Service Monitor
+RUN Add-WindowsFeature Web-Server ; \
+
+# Abrir somente a porta 80 para acesso externo   
+EXPOSE 80
+
+# Usando service monitor para verificar a saude do container
+ENTRYPOINT ["C:\\ServiceMonitor.exe", "w3svc"]
+
