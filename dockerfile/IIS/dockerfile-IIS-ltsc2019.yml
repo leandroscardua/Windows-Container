@@ -3,6 +3,7 @@ FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 LABEL maintainer "Leandro Scardua"
 
+# configurando o dockerfile para rodar os comandos usando powershell com paramentros abaixo.
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
 # Instalar o IIS e baixar o Service Monitor
