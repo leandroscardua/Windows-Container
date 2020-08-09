@@ -1,7 +1,7 @@
 version: '3.8'
 services: 
     ms-sql-server:
-        image: leandroscar/mssql2017dev-windows-ltsc2019]
+        image: leandroscar/mssql2017dev-windows-ltsc2019
         environment: 
             ACCEPT_EULA: "Y"
             sa_password: "PassW0rd+42020"
