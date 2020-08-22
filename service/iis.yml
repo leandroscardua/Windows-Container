@@ -6,6 +6,6 @@ metadata:
     spec:
       containers:
       - name: iis
-        image: leandroscar\
+        image: leandroscar/iis-windows-ltsc2019
         ports:
         - containerPort: 80
