@@ -17,3 +17,5 @@ spec:
         image: leandroscar/iis-windows-ltsc2019
         ports:
         - containerPort: 80
+        externalIPs:
+          - 192.168.218.200
