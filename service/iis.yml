@@ -16,4 +16,4 @@ spec:
       - name: iis
         image: leandroscar/iis-windows-ltsc2019
         ports:
-        - containerPort: 80
+        - containerPort: 88
