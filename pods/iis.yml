@@ -7,5 +7,3 @@ spec:
   - name: iis
     image: leandroscar/iis-windows-ltsc2019
     imagePullPolicy: IfNotPresent
-  nodeSelector:
-    os: windows
