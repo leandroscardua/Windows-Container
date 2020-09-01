@@ -1,11 +1,11 @@
-# Docker Swarm on Windows
+# Docker Swarm on Windows Server
 
 ![alt text]
 
 # Installing docker swarm on node 1
-curl.exe -LO https://raw.githubusercontent.com/leandroscardua/Kubernetes-Windows/master/windows-node.ps1
-.\windows-node1.ps1 -servername win19-n1 | Out-Null
+curl.exe -LO https://github.com/leandroscardua/Windows-Container/blob/master/swarm/docker-swarm.ps1
+.\docker-swarm.ps1 -servername win19-n1 | Out-Null
 
 # Installing docker swarm on node 2
-curl.exe -LO https://raw.githubusercontent.com/leandroscardua/Kubernetes-Windows/master/windows-node.ps1
-.\windows-node2.ps1 -servername win19-n2 | Out-Null
+curl.exe -LO https://github.com/leandroscardua/Windows-Container/blob/master/swarm/docker-swarm.ps1
+.\docker-swarm.ps1 -servername win19-n2 | Out-Null
