@@ -6,17 +6,9 @@ param(
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
 
-Write-Host "Rename the computer to win19-n1"
+Write-Host "Rename the computer to $servername"
 #Rename
 Rename-Computer -NewName "$servername" | Out-Null
-
-Write-Host "Rename the network interface to Ethernet"
-# Rename network interface to Ethernet
-Rename-NetAdapter -Name (Get-NetAdapter -Name * -Physical).Name -NewName "Ethernet" | Out-Null
-
-Write-Host "Uninstalling Windows-Defender Feature"
-# Uninstall Windows Defender
-Uninstall-WindowsFeature Windows-Defender | Out-Null
 
 # Update the NuGet Module
 Write-Host "Updating The Nuget Package Management"
