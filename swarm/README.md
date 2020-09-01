@@ -1,6 +1,6 @@
 # Docker Swarm on Windows Server
 
-![alt text](https://github.com/leandroscardua/Windows-Container/blob/master/swarm/Untitled%20Diagram-Page-1.png)
+![alt text]
 
 # Installing docker swarm on node 1
 curl.exe -LO https://github.com/leandroscardua/Windows-Container/blob/master/swarm/docker-swarm.ps1
