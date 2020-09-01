@@ -1,5 +1,14 @@
+param(
+  [Parameter(Mandatory=$true)]
+  [String]$servername
+)
+
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
+
+Write-Host "Rename the computer to win19-n1"
+#Rename
+Rename-Computer -NewName "$servername" | Out-Null
 
 Write-Host "Rename the network interface to Ethernet"
 # Rename network interface to Ethernet
@@ -39,4 +48,3 @@ pause
 Write-Host "Please, Hit enter to reboot the server to complete the configuration"
 
 Restart-Computer
-
